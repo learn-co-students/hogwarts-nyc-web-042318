@@ -1,5 +1,10 @@
 import React from "react";
 
+function nameFix(str) {
+  let newStr = str.replace(/ /g, "_").toLowerCase();
+  return newStr;
+};
+
 const Piggy = ({ hog, selectPig }) => {
   if (!hog) {
     return <div>Click a pig's card to display its full information.</div>
@@ -10,7 +15,10 @@ const Piggy = ({ hog, selectPig }) => {
 
       <div className="ui card eight wide column" onClick={() => selectPig(hog) }>
           <div className="image">
-          <img src="https://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/H-P/pig-fence.adapt.945.1.jpg" alt="its a pig" />
+            <img
+              src={require(`../hog-imgs/${nameFix(hog.name)}.jpg`)}
+              alt={hog.name}
+            />
         </div>
         <div className="content">
           <a className="header">{hog.name} | {hog.specialty}</a>

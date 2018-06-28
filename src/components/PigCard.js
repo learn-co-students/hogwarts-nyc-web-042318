@@ -5,11 +5,20 @@ class PigCard extends Component {
     super(props);
 
   }
+
+  nameFix = str => {
+    let newStr = str.replace(/ /g, "_").toLowerCase();
+    return newStr;
+  };
+
   render() {
     return (
       <div className="ui card eight wide column" onClick={() => { this.props.selectPig(this.props.hog) }} >
         <div className="image">
-          <img src="https://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/H-P/pig-fence.adapt.945.1.jpg" alt="its a pig" />
+         <img
+              src={require(`../hog-imgs/${this.nameFix(this.props.hog.name)}.jpg`)}
+              alt={this.props.hog.name}
+            />
         </div>
         <div className="content">
           <a className="header">{this.props.hog.name} | {this.props.hog.specialty}</a>
