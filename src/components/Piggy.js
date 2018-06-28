@@ -13,7 +13,7 @@ const Piggy = ({ hog, selectPig }) => {
       console.log(hog)
   return (
 
-      <div className="ui card eight wide column" onClick={() => selectPig(hog) }>
+      <div className="ui card" onClick={() => selectPig(hog) }>
           <div className="image">
             <img
               src={require(`../hog-imgs/${nameFix(hog.name)}.jpg`)}

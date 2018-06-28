@@ -13,7 +13,7 @@ class PigCard extends Component {
 
   render() {
     return (
-      <div className="ui card eight wide column" onClick={() => { this.props.selectPig(this.props.hog) }} >
+      <div className="ui card" onClick={() => { this.props.selectPig(this.props.hog) }} >
         <div className="image">
          <img
               src={require(`../hog-imgs/${this.nameFix(this.props.hog.name)}.jpg`)}
